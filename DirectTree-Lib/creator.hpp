@@ -1,6 +1,7 @@
 #include <iostream>
-#include <fstream>
+#include <string>
 #include <filesystem>
+#include <fstream>
 
 typedef class Json
 {
@@ -10,15 +11,7 @@ typedef class Json
     public :
         Json(std :: string path)
         {
-            bool a = std :: filesystem ::exists(path);
-            if (a)
-            {
-                file.open(path,std :: ios :: openmode :: _S_in);
-            }else 
-            {
-                file = std :: fstream(path,std :: ios :: openmode :: _S_in);
-                file << "{\n";
-            }
+            file = std :: fstream(path,std :: ios :: openmode :: _S_in);
         }
         void operator[](std :: string Heloo)
         {
